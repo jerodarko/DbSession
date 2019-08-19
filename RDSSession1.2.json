@@ -366,7 +366,7 @@
       "Type": "AWS::RDS::DBInstance",
       "DeletionPolicy" : "Delete",
       "Properties": {
-        "AllocatedStorage": "100",
+        "AllocatedStorage": "20",
         "CharacterSetName": "AL32UTF8",
         "DBSnapshotIdentifier":"arn:aws:rds:us-east-1:439159886065:snapshot:dbsessionoracle-final",
         "DBInstanceClass": "db.m4.large",
