@@ -1,4 +1,4 @@
-# Part2
+# Workshop-Part2
 
 ## SQL Server to Postgres **fullload and cdc** task
 1. For source EC2 SQL Server rdp (remote desktop) using login **\administrator** and password **pAsswOrd12**
