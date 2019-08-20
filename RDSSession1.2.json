@@ -397,7 +397,7 @@
     "SQLServerEE13": {
       "Type": "AWS::EC2::Instance",
       "Properties":{
-        "ImageId" : "ami-0cd854719bca1161c",
+        "ImageId" : "ami-006e208ceab6d94e9",
         "InstanceType" : "m4.xlarge",
         "KeyName" :{ "Ref" :"myKeyPair" },
         "SecurityGroupIds": [{ "Ref" : "EC2ClientSG" }],
