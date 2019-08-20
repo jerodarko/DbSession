@@ -1,7 +1,7 @@
-## Upload your DAY3 zip files at this location
+## Upload your zip files of the Assessment at this location
 
-# https://bit.ly/2SSdkHJ
+# https://tinyurl.com/yym9umne
 
 
-# you can connect with me on Linkedin 
-  ## https://www.linkedin.com/in/subhashraut
+
+
