@@ -1,14 +1,14 @@
 # Challenge
 
 ## 1A. Oracle to Postgres dms task challenge
-1. Make sure we have taken care of prerequisites for the RDS oracle to use as CDC source with logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
+1. Make sure you have taken care of prerequisites for the RDS oracle to use as CDC source with logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
 >hint: Source is RDS oracle and not an EC2 or On-prem Oracle instance, thus prerequisites will vary.
 2. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
 3. Open **Database migration tasks**.
 4. Click on **Create task** from right top corner.
 5. **Task Identifier**: *ORA2AUPGcdc*
 6. **Replication instance** Select the replication instance.
-7. **SourceDatabaseEndpoint** Select SQLserver endpoint *oraclesource*.
+7. **SourceDatabaseEndpoint** Select Oracle endpoint *oraclesource*.
 8. **TargetDatabaseEndpoint** Select Aurora Postgres endpoint *aurorapgtarget*.
 9. Set the Migration type to *Migrate existing data and replicate ongoing changes*
 10. Under **Task settings** check the logging by selecting **Enable CloudWatch logs**.
@@ -30,15 +30,16 @@ UPDATE newtable set region='SOUTH' where id=2;
 ```
 16. Verify the data is getting migrating correctly.
 17. If not, troubleshoot and fix the same.
-18. Finally, do upload the task logs/source and target table (newtable) select outputs.
-19. Zip above files and name it as per your full name and day3
+18. Finally, do upload the task logs,source and target table (newtable) select outputs.
+19. Zip above files and name it as per your full name.
 Lastly upload it to https://tinyurl.com/y3xv4r6u
 
 
 ## 1B. SQLServer to Aurora Postgres dms task challenge
-1a. Make sure you have taken care of prerequisites for the EC2 SQLServer to use as CDC source with ongoing replication task https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html
 
-1b.
+1. Make sure you have taken care of prerequisites for the EC2 SQLServer to use as CDC source with ongoing replication task https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html
+
+2.
 Script to run on target Aurora Writer PSQL connection:
 ```SQL
 CREATE TABLE finaltb(
@@ -71,23 +72,23 @@ REFERENCES ordertb (orderid)
 ON UPDATE NO ACTION
 ON DELETE NO ACTION;
 ```
-2. For source EC2 SQL Server rdp (remote desktop) using login **\administrator** and password **pAsswOrd12**
-3. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
-4. Open **Database migration tasks**.
-5. Click on **Create task** from right top corner.
-6. **Task Identifier**: *SQL2AUPGcdc*
-7. **Replication instance** Select the replication instance.
-8. **SourceDatabaseEndpoint** Select SQLserver endpoint *mssqlsource*.
-9. **TargetDatabaseEndpoint** Select Aurora Postgres endpoint *aurorapgtarget*.
-10. Set the Migration type to *Migrate existing data and replicate ongoing changes*
-11. Under **Task settings** make sure that
+3. For source EC2 SQL Server rdp (remote desktop) using login **\administrator** and password **pAsswOrd12**
+4. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
+5. Open **Database migration tasks**.
+6. Click on **Create task** from right top corner.
+7. **Task Identifier**: *SQL2AUPGcdc*
+8. **Replication instance** Select the replication instance.
+9. **SourceDatabaseEndpoint** Select SQLserver endpoint *mssqlsource*.
+10. **TargetDatabaseEndpoint** Select Aurora Postgres endpoint *aurorapgtarget*.
+11. Set the Migration type to *Migrate existing data and replicate ongoing changes*
+12. Under **Task settings** make sure that
     1. The **Target table preparation mode** is set to **Truncate**.
     2. Check the logging by selecting **Enable CloudWatch logs**.
-12. Under **Table mappings** migrate table **finaltb** from **dbo** schema.
-13. Add a **transformation rule**
+13. Under **Table mappings** migrate table **finaltb** from **dbo** schema.
+14. Add a **transformation rule**
     1. to rename schema from dbo to public.
-14. Lastly **Create task**
-15. Once the task is running in state **ongoing replication**, verify the Aurora Postgres Table newtable has required full load data:
+15. Lastly **Create task**
+16. Once the task is running in state **ongoing replication**, verify the Aurora Postgres Table newtable has required full load data:
 ```
 select * from finaltb;
 ```
@@ -95,8 +96,7 @@ select * from finaltb;
 18. If not, troubleshoot and fix the same.
 19. Finally, do upload the task logs,source and target table (finaltb) select outputs.
 20. Zip above files and name it as per your full name.
-Lastly upload it to
-https://tinyurl.com/y3xv4r6u
+Lastly upload it to  https://tinyurl.com/y3xv4r6u
 
 ### Once done, please *don't forget* to delete your stack from Cloudformation:
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1
