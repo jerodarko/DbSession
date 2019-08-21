@@ -136,7 +136,7 @@ select * from finaltb;
 Lastly upload it to
 https://tinyurl.com/y3xv4r6u
 
-### Once done, please *don't forget* to upload to delete your stack from Cloudformation:
+### Once done, please *don't forget* to delete your stack from Cloudformation:
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1
 
 Click Delete Stack 
