@@ -4,6 +4,7 @@
 
 1a. Make sure we have taken care of prerequisites for the RDS oracle to use as CDC source with logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
 >hint: Source is RDS oracle and not an EC2 or On-prem Oracle instance, thus prerequisites will vary.
+
 1b.
 Script to run on target Aurora Writer PSQL connection:
 ```SQL
