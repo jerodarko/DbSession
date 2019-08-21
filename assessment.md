@@ -59,7 +59,7 @@ ON DELETE NO ACTION;
 ```SQL
 select * from newtable;
 ```
-15. Run sample inserts/update statements to the source table
+15. Run sample inserts/update statements on the source table
 ```SQL
 INSERT INTO newtable (id,fname,lname,region) VALUES (3,'Arthur','Coleman','NORTH');
 INSERT INTO newtable (id, fname,lname,region) VALUES (4, 'Nigel','Newman','SOUTH');
@@ -110,36 +110,33 @@ ON UPDATE NO ACTION
 ON DELETE NO ACTION;
 ```
 2. For source EC2 SQL Server rdp (remote desktop) using login **\administrator** and password **pAsswOrd12**
-3. Run PSQL script on target aurora postgres cluster as mentioned in next section:
-2. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
-3. Open **Database migration tasks**.
-4. Click on **Create task** from right top corner.
-5. **Task Identifier**: *SQL2AUPGcdc*
-6. **Replication instance** Select the replication instance.
-7. **SourceDatabaseEndpoint** Select SQLserver endpoint *mssqlsource*.
-8. **TargetDatabaseEndpoint** Select Aurora Postgres endpoint *aurorapgtarget*.
-9. Set the Migration type to *Migrate existing data and replicate ongoing changes*
-10. Under **Task settings** make sure that
+3. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
+4. Open **Database migration tasks**.
+5. Click on **Create task** from right top corner.
+6. **Task Identifier**: *SQL2AUPGcdc*
+7. **Replication instance** Select the replication instance.
+8. **SourceDatabaseEndpoint** Select SQLserver endpoint *mssqlsource*.
+9. **TargetDatabaseEndpoint** Select Aurora Postgres endpoint *aurorapgtarget*.
+10. Set the Migration type to *Migrate existing data and replicate ongoing changes*
+11. Under **Task settings** make sure that
     1. The **Target table preparation mode** is set to **Truncate**.
     2. Check the logging by selecting **Enable CloudWatch logs**.
-11. Under **Table mappings** migrate table **finaltb** from **dbo** schema.
-12. Add a **transformation rule**
+12. Under **Table mappings** migrate table **finaltb** from **dbo** schema.
+13. Add a **transformation rule**
     1. to rename schema from dbo to public.
-13. Lastly **Create task**
-14. Once the task is running in state **ongoing replication**, verify the Aurora Postgres Table newtable has required full load data:
+14. Lastly **Create task**
+15. Once the task is running in state **ongoing replication**, verify the Aurora Postgres Table newtable has required full load data:
 ```
 select * from finaltb;
 ```
-16. Verify the data is getting migrating correctly.
-17. If not, troubleshoot and fix the same.
-18. Finally, do upload the task logs,source and target table (finaltb) select outputs.
-19. Zip above files and name it as per your full name.
+17. Verify the data is getting migrating correctly.
+18. If not, troubleshoot and fix the same.
+19. Finally, do upload the task logs,source and target table (finaltb) select outputs.
+20. Zip above files and name it as per your full name.
 Lastly upload it to
 https://tinyurl.com/y3xv4r6u
 
-
-
-### Once done, *don't forget* to upload to delete your stack from Cloudformation:
+### Once done, please *don't forget* to upload to delete your stack from Cloudformation:
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1
 
 Click Delete Stack 
