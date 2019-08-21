@@ -1,7 +1,7 @@
 # Challenge
 
 ## 1A. Oracle to Postgres dms task challenge
-1. Make sure you have taken care of prerequisites for the RDS oracle to use as CDC source with logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
+1. Make sure you have taken care of prerequisites for the RDS oracle to use as CDC source with Oracle LogMiner https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
 >hint: Source is RDS oracle and not an EC2 or On-prem Oracle instance, thus prerequisites will vary.
 2. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
 3. Open **Database migration tasks**.
