@@ -74,7 +74,7 @@ https://tinyurl.com/y3xv4r6u
 
 
 ## 1B. SQLServer to Aurora Postgres dms task challenge
-1a. Make sure we have taken care of prerequisites for the EC2 SQLServer to use as CDC source with replication https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html
+1a. Make sure you have taken care of prerequisites for the EC2 SQLServer to use as CDC source with ongoing replication task https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html
 
 1b.
 Script to run on target Aurora Writer PSQL connection:
@@ -139,4 +139,7 @@ https://tinyurl.com/y3xv4r6u
 
 
 
-### Once done, *don't forget* to upload to delete your stack from Cloudformation*.
+### Once done, *don't forget* to upload to delete your stack from Cloudformation:
+https://console.aws.amazon.com/cloudformation/home?region=us-east-1
+
+Click Delete Stack 
