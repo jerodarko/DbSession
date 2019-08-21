@@ -2,8 +2,6 @@
 
 1. Create a *Replication Instance*.
 2. Create Source and Target *Endpoints*.
-3. Create a *Replication task* to migrate data from either a Oracle or SQLServer Source to Aurora Postgres target.
-
 
 # Replication Instance
 1. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
@@ -35,7 +33,6 @@ Based on your interest you can work on a *Oracle to Aurora Postgres* Or a *SQL S
 15. If the connection test fails troubleshoot the same.
 16. Lastly click on **Create endpoint**.
 
-
 ## Oracle
 1. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
 2. Open **Endpoints**.
@@ -53,7 +50,6 @@ Based on your interest you can work on a *Oracle to Aurora Postgres* Or a *SQL S
 14. click on **Run test**
 15. If the connection test fails troubleshoot the same.
 16. Lastly click on **Create endpoint**.
-
 
 ## Aurora Postgres
 1. Open **AWS DMS Console** by clicking on link https://console.aws.amazon.com/dms/v2/home?region=us-east-1
