@@ -2,7 +2,7 @@
 
 ## 1A. Oracle to Aurora Postgres dms task challenge
 
-1a. Make sure you have taken care of prerequisites for the RDS oracle to use as CDC source with logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
+1a. Make sure you have taken care of prerequisites for the RDS oracle to use as CDC source with Oracle logminer https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html
 >hint: Source is RDS oracle and not an EC2 or On-prem Oracle instance, thus prerequisites will vary.
 
 1b.
@@ -138,7 +138,5 @@ Lastly upload it to
 https://tinyurl.com/y3xv4r6u
 
 
-
-``
 
 ### Once done, *don't forget* to upload to delete your stack from Cloudformation*.
